@@ -18,6 +18,7 @@
 		9000D51C228E642B00703D17 /* password_manager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9000D51A228E642B00703D17 /* password_manager.xcdatamodeld */; };
 		9000D51E228E642C00703D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51D228E642C00703D17 /* Assets.xcassets */; };
 		9000D521228E642C00703D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51F228E642C00703D17 /* LaunchScreen.storyboard */; };
+		9000D538228E8FF900703D17 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000D537228E8FF900703D17 /* MainTabBarController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		9000D51D228E642C00703D17 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9000D520228E642C00703D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9000D522228E642C00703D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9000D537228E8FF900703D17 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */,
 				1F1A6C0E228E75FE006A0C36 /* NewCredentialsViewController.swift */,
 				1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */,
+				9000D537228E8FF900703D17 /* MainTabBarController.swift */,
 			);
 			path = MainViewControlloer;
 			sourceTree = "<group>";
@@ -179,6 +182,7 @@
 			files = (
 				1F1A6C11228E75FE006A0C36 /* EmailVerificationViewController.swift in Sources */,
 				1F1A6C10228E75FE006A0C36 /* AuthViewController.swift in Sources */,
+				9000D538228E8FF900703D17 /* MainTabBarController.swift in Sources */,
 				1F1A6C13228E75FE006A0C36 /* NewCredentialsViewController.swift in Sources */,
 				1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */,
 				9000D516228E642B00703D17 /* ViewController.swift in Sources */,
