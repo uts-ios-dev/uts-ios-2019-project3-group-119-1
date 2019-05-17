@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F1A6C07228E65D0006A0C36 /* Ba.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A6C06228E65D0006A0C36 /* Ba.storyboard */; };
 		1F1A6C10228E75FE006A0C36 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0A228E75FE006A0C36 /* AuthViewController.swift */; };
 		1F1A6C11228E75FE006A0C36 /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0B228E75FE006A0C36 /* EmailVerificationViewController.swift */; };
 		1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */; };
@@ -22,7 +21,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1F1A6C06228E65D0006A0C36 /* Ba.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ba.storyboard; sourceTree = "<group>"; };
 		1F1A6C0A228E75FE006A0C36 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
 		1F1A6C0B228E75FE006A0C36 /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
 		1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -49,14 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F1A6C05228E65B1006A0C36 /* Storyboard */ = {
-			isa = PBXGroup;
-			children = (
-				1F1A6C06228E65D0006A0C36 /* Ba.storyboard */,
-			);
-			path = Storyboard;
-			sourceTree = "<group>";
-		};
 		1F1A6C08228E75FE006A0C36 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -105,7 +95,6 @@
 			isa = PBXGroup;
 			children = (
 				1F1A6C08228E75FE006A0C36 /* View Controller */,
-				1F1A6C05228E65B1006A0C36 /* Storyboard */,
 				9000D513228E642B00703D17 /* AppDelegate.swift */,
 				9000D515228E642B00703D17 /* ViewController.swift */,
 				9000D517228E642B00703D17 /* Main.storyboard */,
@@ -178,7 +167,6 @@
 				9000D521228E642C00703D17 /* LaunchScreen.storyboard in Resources */,
 				9000D51E228E642C00703D17 /* Assets.xcassets in Resources */,
 				9000D519228E642B00703D17 /* Main.storyboard in Resources */,
-				1F1A6C07228E65D0006A0C36 /* Ba.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
