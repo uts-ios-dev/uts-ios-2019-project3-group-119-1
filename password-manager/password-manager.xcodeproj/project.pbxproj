@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		1F1A6C07228E65D0006A0C36 /* Ba.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1A6C06228E65D0006A0C36 /* Ba.storyboard */; };
+		1F1A6C10228E75FE006A0C36 /* AuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0A228E75FE006A0C36 /* AuthViewController.swift */; };
+		1F1A6C11228E75FE006A0C36 /* EmailVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0B228E75FE006A0C36 /* EmailVerificationViewController.swift */; };
+		1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */; };
+		1F1A6C13228E75FE006A0C36 /* NewCredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0E228E75FE006A0C36 /* NewCredentialsViewController.swift */; };
+		1F1A6C14228E75FE006A0C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */; };
 		9000D514228E642B00703D17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000D513228E642B00703D17 /* AppDelegate.swift */; };
 		9000D516228E642B00703D17 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000D515228E642B00703D17 /* ViewController.swift */; };
 		9000D519228E642B00703D17 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9000D517228E642B00703D17 /* Main.storyboard */; };
@@ -18,6 +23,11 @@
 
 /* Begin PBXFileReference section */
 		1F1A6C06228E65D0006A0C36 /* Ba.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Ba.storyboard; sourceTree = "<group>"; };
+		1F1A6C0A228E75FE006A0C36 /* AuthViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewController.swift; sourceTree = "<group>"; };
+		1F1A6C0B228E75FE006A0C36 /* EmailVerificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewController.swift; sourceTree = "<group>"; };
+		1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		1F1A6C0E228E75FE006A0C36 /* NewCredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCredentialsViewController.swift; sourceTree = "<group>"; };
+		1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		9000D510228E642B00703D17 /* password-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "password-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9000D513228E642B00703D17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9000D515228E642B00703D17 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +57,34 @@
 			path = Storyboard;
 			sourceTree = "<group>";
 		};
+		1F1A6C08228E75FE006A0C36 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A6C09228E75FE006A0C36 /* AuthViewController */,
+				1F1A6C0C228E75FE006A0C36 /* MainViewControlloer */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		1F1A6C09228E75FE006A0C36 /* AuthViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A6C0A228E75FE006A0C36 /* AuthViewController.swift */,
+				1F1A6C0B228E75FE006A0C36 /* EmailVerificationViewController.swift */,
+			);
+			path = AuthViewController;
+			sourceTree = "<group>";
+		};
+		1F1A6C0C228E75FE006A0C36 /* MainViewControlloer */ = {
+			isa = PBXGroup;
+			children = (
+				1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */,
+				1F1A6C0E228E75FE006A0C36 /* NewCredentialsViewController.swift */,
+				1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */,
+			);
+			path = MainViewControlloer;
+			sourceTree = "<group>";
+		};
 		9000D507228E642B00703D17 = {
 			isa = PBXGroup;
 			children = (
@@ -66,6 +104,7 @@
 		9000D512228E642B00703D17 /* password-manager */ = {
 			isa = PBXGroup;
 			children = (
+				1F1A6C08228E75FE006A0C36 /* View Controller */,
 				1F1A6C05228E65B1006A0C36 /* Storyboard */,
 				9000D513228E642B00703D17 /* AppDelegate.swift */,
 				9000D515228E642B00703D17 /* ViewController.swift */,
@@ -150,9 +189,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1A6C11228E75FE006A0C36 /* EmailVerificationViewController.swift in Sources */,
+				1F1A6C10228E75FE006A0C36 /* AuthViewController.swift in Sources */,
+				1F1A6C13228E75FE006A0C36 /* NewCredentialsViewController.swift in Sources */,
+				1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */,
 				9000D516228E642B00703D17 /* ViewController.swift in Sources */,
 				9000D51C228E642B00703D17 /* password_manager.xcdatamodeld in Sources */,
 				9000D514228E642B00703D17 /* AppDelegate.swift in Sources */,
+				1F1A6C14228E75FE006A0C36 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
