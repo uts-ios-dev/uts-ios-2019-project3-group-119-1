@@ -65,10 +65,10 @@
             </objects>
             <point key="canvasLocation" x="-1089.8550724637682" y="-197.28260869565219"/>
         </scene>
-        <!--Item-->
+        <!--Passwords-->
         <scene sceneID="atc-xe-uRk">
             <objects>
-                <tableViewController id="MGt-gJ-GaA" customClass="ListViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController title="Passwords" id="MGt-gJ-GaA" customClass="ListViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Cb8-6P-Z7F">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,8 +123,8 @@
                             <outlet property="delegate" destination="MGt-gJ-GaA" id="Xbp-Eu-L0p"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="EZk-y1-dwB"/>
-                    <navigationItem key="navigationItem" id="ZA6-SV-r91"/>
+                    <tabBarItem key="tabBarItem" title="Passwords" id="EZk-y1-dwB"/>
+                    <navigationItem key="navigationItem" title="Passwords" id="G2t-vq-iMX"/>
                     <connections>
                         <segue destination="8GH-80-9pS" kind="show" id="1tL-3X-mBu"/>
                     </connections>
@@ -184,14 +184,9 @@
                         <viewLayoutGuide key="safeArea" id="KFc-St-7iQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="NNL-ra-nwS">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="PHU-x0-ip4">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Z8j-BS-9dB">
-                                <rect key="frame" x="332" y="7" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Verify"/>
-                            </button>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="2EM-Ic-5qh">
                             <connections>
-                                <segue destination="hd5-Zi-Uhw" kind="show" id="wef-cD-2tj"/>
+                                <segue destination="hd5-Zi-Uhw" kind="show" id="5wb-ad-AnE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -301,8 +296,8 @@
                             <outlet property="delegate" destination="8GH-80-9pS" id="zxs-92-i0P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="0Gs-qF-ob4"/>
-                    <navigationItem key="navigationItem" title="Edit Password" id="4xG-eX-ULR">
+                    <tabBarItem key="tabBarItem" title="New" id="0Gs-qF-ob4"/>
+                    <navigationItem key="navigationItem" title="New Password" id="4xG-eX-ULR">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0nK-7m-WQx"/>
                     </navigationItem>
                 </tableViewController>
@@ -326,13 +321,13 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foi-mG-diC">
-                                <rect key="frame" x="162.66666666666666" y="629" width="89" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="178.66666666666666" y="641" width="57" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Sign out"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-e2-iMx">
-                                <rect key="frame" x="114.66666666666669" y="571" width="185" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <rect key="frame" x="148" y="595" width="118" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Account Settings"/>
                                 <connections>
                                     <segue destination="kuJ-lT-j5Z" kind="show" id="l1X-ug-BzV"/>
@@ -358,7 +353,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTN-F4-Lej"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="zzE-Mo-uCG"/>
+                    <tabBarItem key="tabBarItem" title="Settings" id="zzE-Mo-uCG"/>
                     <navigationItem key="navigationItem" title="Settings" id="S4G-dy-sgd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="EHn-BE-dRY"/>
                     </navigationItem>
@@ -487,6 +482,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NHE-Yk-fHc"/>
-        <segue reference="pY8-Eh-mUR"/>
+        <segue reference="5wb-ad-AnE"/>
     </inferredMetricsTieBreakers>
 </document>
