@@ -54,7 +54,15 @@
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0DN-Er-wK4"/>
-                                    <segue destination="5hH-R9-C1X" kind="show" id="5Ff-7d-TdC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9E-go-ciN">
+                                <rect key="frame" x="163" y="626" width="82" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Create User"/>
+                                <connections>
+                                    <action selector="createUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tHR-u8-1md"/>
+                                    <segue destination="5hH-R9-C1X" kind="show" id="lLA-Z2-mYn"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -63,10 +71,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="cSG-kr-KC7"/>
                     <connections>
+                        <outlet property="createUserButton" destination="K9E-go-ciN" id="GqQ-R4-Yt9"/>
                         <outlet property="emailField" destination="TTr-mj-xGm" id="KCK-Fq-qUg"/>
                         <outlet property="passwordConfirmField" destination="hu9-re-b0C" id="wqO-BN-xj9"/>
                         <outlet property="passwordField" destination="7ey-lo-uFY" id="YK3-lg-Nyj"/>
-                        <outlet property="signIn" destination="ZXg-uq-Xfx" id="4ct-fa-Acx"/>
+                        <outlet property="signInButton" destination="ZXg-uq-Xfx" id="g3A-L5-I8e"/>
+                        <outlet property="signUpButton" destination="DKd-Gz-m7e" id="qhX-z8-kuo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -498,6 +508,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NHE-Yk-fHc"/>
-        <segue reference="5wb-ad-AnE"/>
+        <segue reference="pY8-Eh-mUR"/>
     </inferredMetricsTieBreakers>
 </document>
