@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>634357800156-jv73068slpuaj6p4k0vvut2t0b6fi915.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.634357800156-jv73068slpuaj6p4k0vvut2t0b6fi915</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBUHpgJTyPlBXhhM14OG6haz2EbEuKjMb8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>634357800156</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>hochung.password-manager</string>
+	<key>PROJECT_ID</key>
+	<string>password-manager-2d7a4</string>
+	<key>STORAGE_BUCKET</key>
+	<string>password-manager-2d7a4.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:634357800156:ios:00daec452357ce67</string>
+	<key>DATABASE_URL</key>
+	<string>https://password-manager-2d7a4.firebaseio.com</string>
+</dict>
+</plist>
