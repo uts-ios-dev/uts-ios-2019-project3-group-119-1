@@ -44,6 +44,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
+                                    <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4B-W3-kBd"/>
                                     <segue destination="hd5-Zi-Uhw" kind="show" id="pY8-Eh-mUR"/>
                                 </connections>
                             </button>
@@ -52,6 +53,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
+                                    <action selector="signUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0DN-Er-wK4"/>
                                     <segue destination="5hH-R9-C1X" kind="show" id="5Ff-7d-TdC"/>
                                 </connections>
                             </button>
@@ -60,6 +62,12 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="cSG-kr-KC7"/>
+                    <connections>
+                        <outlet property="emailField" destination="TTr-mj-xGm" id="KCK-Fq-qUg"/>
+                        <outlet property="passwordConfirmField" destination="hu9-re-b0C" id="wqO-BN-xj9"/>
+                        <outlet property="passwordField" destination="7ey-lo-uFY" id="YK3-lg-Nyj"/>
+                        <outlet property="signIn" destination="ZXg-uq-Xfx" id="4ct-fa-Acx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -164,6 +172,9 @@
                                 <rect key="frame" x="181" y="507" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Resend"/>
+                                <connections>
+                                    <action selector="resendVerificationCode:" destination="5hH-R9-C1X" eventType="touchUpInside" id="gmC-wo-G6M"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EhL-Vk-hrm">
                                 <rect key="frame" x="352" y="438" width="30" height="21"/>
@@ -186,10 +197,15 @@
                     <navigationItem key="navigationItem" id="NNL-ra-nwS">
                         <barButtonItem key="rightBarButtonItem" systemItem="done" id="2EM-Ic-5qh">
                             <connections>
+                                <action selector="finishVerification:" destination="5hH-R9-C1X" id="at4-KT-xG0"/>
                                 <segue destination="hd5-Zi-Uhw" kind="show" id="5wb-ad-AnE"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="countdownLabel" destination="EhL-Vk-hrm" id="lVZ-Bl-ND8"/>
+                        <outlet property="verificationCodeField" destination="VVn-VJ-7og" id="wSX-QX-NLw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buL-iK-BcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

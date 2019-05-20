@@ -10,13 +10,25 @@ import UIKit
 
 class EmailVerificationViewController: UIViewController {
 
+    @IBOutlet weak var verificationCodeField: UITextField!
+    
+    @IBOutlet weak var countdownLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-
+    
+    @IBAction func resendVerificationCode(_ sender: UIButton) {
+        
+    }
+    
+    @IBAction func finishVerification(_ sender: UIBarButtonItem) {
+        
+    }
+    
     /*
     // MARK: - Navigation
 

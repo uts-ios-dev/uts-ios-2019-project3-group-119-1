@@ -9,7 +9,17 @@
 import UIKit
 
 class AuthViewController: UIViewController {
-
+    
+    @IBOutlet weak var emailField: UITextField!
+    @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var passwordConfirmField: UITextField!
+    
+    @IBAction func signIn(_ sender: UIButton) {
+    }
+    //when sign up button tap, the 're-enter password" field should be showed
+    @IBAction func signUp(_ sender: UIButton) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
