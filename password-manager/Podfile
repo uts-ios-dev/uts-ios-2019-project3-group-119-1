@@ -6,9 +6,13 @@ target 'password-manager' do
   use_frameworks!
 
   # Pods for password-manager
+  
+  # Firebase
   pod 'Firebase/Core'
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
 
+  # PwGen
+  pod 'PwGen'
 end

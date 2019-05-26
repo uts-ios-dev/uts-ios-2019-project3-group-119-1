@@ -124,7 +124,7 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Passwords" id="EZk-y1-dwB"/>
-                    <navigationItem key="navigationItem" title="Passwords" id="G2t-vq-iMX"/>
+                    <navigationItem key="navigationItem" title="Password Manager" id="5xc-Jf-yk1"/>
                     <connections>
                         <segue destination="8GH-80-9pS" kind="show" id="1tL-3X-mBu"/>
                     </connections>
@@ -198,7 +198,7 @@
         <!--Edit Password-->
         <scene sceneID="VCa-Ci-JRI">
             <objects>
-                <tableViewController title="Edit Password" id="8GH-80-9pS" sceneMemberID="viewController">
+                <tableViewController title="Edit Password" id="8GH-80-9pS" customClass="EditCredentialsViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="zde-oI-RaK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -226,6 +226,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onUsernameChanged" destination="8GH-80-9pS" eventType="editingChanged" id="EwR-vp-cuG"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -249,10 +252,16 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onPasswordChanged" destination="8GH-80-9pS" eventType="editingChanged" id="QVg-lQ-Dey"/>
+                                                    </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0EP-ux-sn3">
                                                     <rect key="frame" x="314" y="41.666666666666664" width="64" height="29.999999999999993"/>
                                                     <state key="normal" title="Generate"/>
+                                                    <connections>
+                                                        <action selector="onRegenerateTapped" destination="8GH-80-9pS" eventType="touchUpInside" id="Owq-K2-aUh"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -284,6 +293,9 @@
                                                     <nil key="textColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <action selector="onWebsiteChanged" destination="8GH-80-9pS" eventType="editingChanged" id="emW-nW-0cS"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -297,9 +309,19 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="New" id="0Gs-qF-ob4"/>
-                    <navigationItem key="navigationItem" title="New Password" id="4xG-eX-ULR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="0nK-7m-WQx"/>
+                    <navigationItem key="navigationItem" title="New Password" id="QJx-zW-jbq">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="Xss-uj-TxW">
+                            <connections>
+                                <action selector="onSaveButtonPressed" destination="8GH-80-9pS" id="eZA-l9-GaU"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="passwordField" destination="7cY-ek-DHU" id="VgZ-1s-XUd"/>
+                        <outlet property="saveButton" destination="Xss-uj-TxW" id="hrV-Hr-DB7"/>
+                        <outlet property="usernameField" destination="tTM-kc-ces" id="Zo5-ly-JeT"/>
+                        <outlet property="websiteField" destination="8Nj-C5-aPh" id="akM-TI-6Fy"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFA-Ag-twP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -354,9 +376,7 @@
                         <viewLayoutGuide key="safeArea" id="hTN-F4-Lej"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" id="zzE-Mo-uCG"/>
-                    <navigationItem key="navigationItem" title="Settings" id="S4G-dy-sgd">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="EHn-BE-dRY"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Settings" id="L8V-eP-nxf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vb-mM-D4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -481,7 +501,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="NHE-Yk-fHc"/>
+        <segue reference="1tL-3X-mBu"/>
         <segue reference="5wb-ad-AnE"/>
     </inferredMetricsTieBreakers>
 </document>

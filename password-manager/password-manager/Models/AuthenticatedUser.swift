@@ -11,9 +11,9 @@ import Firebase
 
 class AuthenticatedUser {
     func signInTest() {
-        Auth.auth().signIn(withEmail: "test@test.com", password: "testtest", completion: {(u,e) in
-            if let user = u {
-                print("user: \(user.user.uid)")
+        Auth.auth().signIn(withEmail: "test@test.com", password: "testtest", completion: {(r,e) in
+            if let result = r {
+                print("user: \(result.user.uid)")
             }
             if let error = e {
                 print("error: \(error.localizedDescription)")
