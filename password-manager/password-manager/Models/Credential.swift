@@ -8,11 +8,18 @@
 
 import Foundation
 import PwGen
+import RNCryptor
+import Firebase
 
 class Credential {
     var username: String?
     var website: String?
     var password: String?
+    let user: AuthenticatedUser!
+    
+    init() {
+        user = AuthenticatedUser()
+    }
     
     func regeneratePassword() {
         // Using PwGen for cryptographic security
@@ -40,5 +47,20 @@ class Credential {
     
     func save() {
         print("pressed save")
+        
+        guard validate() else {
+            return
+        }
+        
+        let encryptedPassword = RNCryptor.encrypt(data: password!.data(using: .utf32)!, withPassword: user.user.uid)
+        // decrypt: RNCryptor.decrypt() -> NSData, then use String(data:encoding:)
+        
+        // Structure: [PWMRoot]/Credentials/UID/USN+URL/[json]
+        // [json]: username, url, encryptedPassword
+        let db = Database.database().reference()
+        db.child("Credentials/\(user.user.uid)/\(username)+\(website)")
+          .setValue(["username": username,
+                     "url": website,
+                     "encryptedPassword": encryptedPassword])
     }
 }

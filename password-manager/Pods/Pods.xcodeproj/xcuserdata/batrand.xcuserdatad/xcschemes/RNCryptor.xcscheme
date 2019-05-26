@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "750042E42DD9D178C53030722DAD0795"
-               BuildableName = "PwGen.framework"
-               BlueprintName = "PwGen"
+               BlueprintIdentifier = "387ED7D005E344081F86C93DBBD51182"
+               BuildableName = "RNCryptor.framework"
+               BlueprintName = "RNCryptor"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

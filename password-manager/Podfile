@@ -13,6 +13,7 @@ target 'password-manager' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
 
-  # PwGen
+  # Credentials
   pod 'PwGen'
+  pod 'RNCryptor'
 end

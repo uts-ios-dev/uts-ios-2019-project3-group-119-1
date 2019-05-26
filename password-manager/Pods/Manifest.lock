@@ -71,6 +71,7 @@ PODS:
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
   - PwGen (1.0.2)
+  - RNCryptor (5.1.0)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Database
   - PwGen
+  - RNCryptor
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -94,6 +96,7 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - PwGen
+    - RNCryptor
 
 SPEC CHECKSUMS:
   Firebase: fa80b9d987ca014a1ba9357496ef2a0178b28b12
@@ -109,7 +112,8 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PwGen: c84dba4d6961cfbce08e9cd64013be9f4d3812ca
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
 
-PODFILE CHECKSUM: 67208ef8deef275a1a919cce8f3a9a7cf1267c6e
+PODFILE CHECKSUM: 8b9e7d9a5d6d0a6e19db5e1879f4d9855f093890
 
 COCOAPODS: 1.6.2
