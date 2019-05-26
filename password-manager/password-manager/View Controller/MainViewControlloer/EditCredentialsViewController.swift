@@ -48,7 +48,9 @@ class EditCredentialsViewController: UITableViewController {
     }
     
     private func validateCredentials() {
-        saveButton.isEnabled = credential.validate()
+        let isValid = credential.validate()
+        saveButton.isEnabled = isValid
+        print("details valid: \(isValid)")
     }
     
     @IBAction private func onSaveButtonPressed() {

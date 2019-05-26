@@ -24,8 +24,10 @@ extension String {
     }
     
     func isValidUrl() -> Bool {
-        // http://urlregex.com/
-        let regexPattern = "((https|http)://)((\\w|-)+)(([.]|[/])((\\w|-)+))+"
+        // https://stackoverflow.com/a/3809435
+        let regexPattern = #"""
+        [-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)
+        """#
         let regex = try! NSRegularExpression(pattern: regexPattern, options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
     }
