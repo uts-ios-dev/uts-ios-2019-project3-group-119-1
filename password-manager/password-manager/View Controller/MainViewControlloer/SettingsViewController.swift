@@ -23,6 +23,7 @@ class SettingsViewController: UIViewController {
             try Auth.auth().signOut()
             self.userDefaults.removeObject(forKey: "usersignedin")
             self.userDefaults.synchronize()
+            self.navigationController?.popToViewController(AuthViewController(), animated: true)
         } catch let error as NSError {
             print (error.localizedDescription)
         }
