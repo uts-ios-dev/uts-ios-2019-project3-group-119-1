@@ -58,13 +58,10 @@ class AuthViewController: UIViewController {
             (authResult, error) in
             switch error {
                 case .some(let error as NSError) where error.code == AuthErrorCode.wrongPassword.rawValue:
-                    print("wrong password")
                     SCLAlertView().showError("Login Error", subTitle: "Wrong Password")
                 case .some(let error as NSError) where error.code == AuthErrorCode.userNotFound.rawValue:
-                    print("user not found")
                     SCLAlertView().showError("Login Error", subTitle: "user not found")
                 case .some(let error):
-                    print("Login error: \(error.localizedDescription)")
                     SCLAlertView().showError("Login Error", subTitle: error.localizedDescription)
                 case .none:
                     //no login error
@@ -84,7 +81,6 @@ class AuthViewController: UIViewController {
             (authResult, error) in
             switch error {
                 case .some(let error as NSError) where error.code == AuthErrorCode.emailAlreadyInUse.rawValue:
-                    print("email already in use")
                     SCLAlertView().showError("Reigster Error", subTitle: "email already in use")
                 case .some(let error):
                     SCLAlertView().showError("Reigster Error", subTitle: error.localizedDescription)

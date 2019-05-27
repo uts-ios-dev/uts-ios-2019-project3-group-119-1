@@ -13,7 +13,7 @@
         <!--Auth View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AuthViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="authViewController" id="BYZ-38-t0r" customClass="AuthViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1089.8550724637682" y="-197.28260869565219"/>
+            <point key="canvasLocation" x="-1067" y="51"/>
         </scene>
         <!--Passwords-->
         <scene sceneID="atc-xe-uRk">
@@ -347,7 +347,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
-                                    <action selector="signOutButton:" destination="IKJ-ul-ETa" eventType="touchUpInside" id="4F6-ef-3qV"/>
+                                    <action selector="signOut:" destination="IKJ-ul-ETa" eventType="touchUpInside" id="wna-no-bCc"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" identifier="signOutSegue" id="Qg6-zT-8Pn"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-e2-iMx">
@@ -382,13 +383,10 @@
                     <navigationItem key="navigationItem" title="Settings" id="S4G-dy-sgd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="EHn-BE-dRY"/>
                     </navigationItem>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="signOutSegue" id="E0v-dP-X0f"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vb-mM-D4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="2212"/>
+            <point key="canvasLocation" x="-436.23188405797106" y="2211.684782608696"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="dNv-kR-EyD">
@@ -505,11 +503,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="18L-Ai-NSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1997.1014492753625" y="-197.28260869565219"/>
+            <point key="canvasLocation" x="-2041" y="52"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="MYp-WO-0se"/>
         <segue reference="NHE-Yk-fHc"/>
-        <segue reference="E0v-dP-X0f"/>
+        <segue reference="Qg6-zT-8Pn"/>
     </inferredMetricsTieBreakers>
 </document>
