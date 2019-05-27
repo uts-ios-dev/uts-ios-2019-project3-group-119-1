@@ -20,7 +20,6 @@
 		9000D51E228E642C00703D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51D228E642C00703D17 /* Assets.xcassets */; };
 		9000D521228E642C00703D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51F228E642C00703D17 /* LaunchScreen.storyboard */; };
 		9000D538228E8FF900703D17 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000D537228E8FF900703D17 /* MainTabBarController.swift */; };
-		90F7B8BE229B82B600F6F3A3 /* PwEncryption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7B8BD229B82B600F6F3A3 /* PwEncryption.swift */; };
 		E6EAD3A90E142CFC567F08A1 /* Pods_password_manager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63EE74A984D06517E1253DBF /* Pods_password_manager.framework */; };
 /* End PBXBuildFile section */
 
@@ -30,7 +29,7 @@
 		1F1A6C0E228E75FE006A0C36 /* NewCredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewCredentialsViewController.swift; sourceTree = "<group>"; };
 		1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		1FA9D3F8229261ED0051206C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		1FA9D3FA229261FF0051206C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; };
+		1FA9D3FA229261FF0051206C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		63EE74A984D06517E1253DBF /* Pods_password_manager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_password_manager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D27D1FDD79AFE5014CF12CB /* Pods-password-manager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-password-manager.debug.xcconfig"; path = "Target Support Files/Pods-password-manager/Pods-password-manager.debug.xcconfig"; sourceTree = "<group>"; };
 		9000D510228E642B00703D17 /* password-manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "password-manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,7 +41,6 @@
 		9000D520228E642C00703D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9000D522228E642C00703D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9000D537228E8FF900703D17 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
-		90F7B8BD229B82B600F6F3A3 /* PwEncryption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PwEncryption.swift; sourceTree = "<group>"; };
 		C5A1D2011BBFD5C03F03658E /* Pods-password-manager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-password-manager.release.xcconfig"; path = "Target Support Files/Pods-password-manager/Pods-password-manager.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,7 +114,6 @@
 		9000D512228E642B00703D17 /* password-manager */ = {
 			isa = PBXGroup;
 			children = (
-				90F7B8BC229B829B00F6F3A3 /* Utility */,
 				1F1A6C08228E75FE006A0C36 /* View Controller */,
 				9000D513228E642B00703D17 /* AppDelegate.swift */,
 				9000D515228E642B00703D17 /* ViewController.swift */,
@@ -129,14 +126,6 @@
 				1FA9D3FA229261FF0051206C /* Podfile */,
 			);
 			path = "password-manager";
-			sourceTree = "<group>";
-		};
-		90F7B8BC229B829B00F6F3A3 /* Utility */ = {
-			isa = PBXGroup;
-			children = (
-				90F7B8BD229B82B600F6F3A3 /* PwEncryption.swift */,
-			);
-			path = Utility;
 			sourceTree = "<group>";
 		};
 		B8F249924790D4888431E80B /* Frameworks */ = {
@@ -251,6 +240,7 @@
 				"${PODS_ROOT}/Target Support Files/Pods-password-manager/Pods-password-manager-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -260,6 +250,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -276,7 +267,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1A6C10228E75FE006A0C36 /* AuthViewController.swift in Sources */,
-				90F7B8BE229B82B600F6F3A3 /* PwEncryption.swift in Sources */,
 				9000D538228E8FF900703D17 /* MainTabBarController.swift in Sources */,
 				1F1A6C13228E75FE006A0C36 /* NewCredentialsViewController.swift in Sources */,
 				1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */,

@@ -18,14 +18,16 @@ class SettingsViewController: UIViewController {
     
     let userDefaults = UserDefaults.standard
     
-    @IBAction func signOut(_ sender: Any) {
+    @IBAction func signOutButton() {
         do {
             try Auth.auth().signOut()
             self.userDefaults.removeObject(forKey: "usersignedin")
             self.userDefaults.synchronize()
-            self.navigationController?.popToViewController(AuthViewController(), animated: true)
+            
+            //not working
+            self.performSegue(withIdentifier: "signOutSegue", sender: self)
         } catch let error as NSError {
-            print (error.localizedDescription)
+            print ("sign out error",error.localizedDescription)
         }
     }
 }

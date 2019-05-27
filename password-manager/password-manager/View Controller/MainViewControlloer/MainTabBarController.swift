@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTabBarController: UITabBarController {
-
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.navigationItem.hidesBackButton = true
+        
     }
 }

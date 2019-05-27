@@ -10,5 +10,7 @@ target 'password-manager' do
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
-
+  
+  # Pods for SCLAlertView
+  pod 'SCLAlertView'
 end

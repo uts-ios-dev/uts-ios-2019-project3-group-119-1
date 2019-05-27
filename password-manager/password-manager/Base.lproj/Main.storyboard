@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TTr-mj-xGm">
-                                <rect key="frame" x="55" y="364" width="304" height="30"/>
+                                <rect key="frame" x="55" y="320" width="304" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="304" id="2pU-Kl-nf6"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="JXb-mS-yHZ"/>
@@ -30,7 +30,7 @@
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7ey-lo-uFY">
-                                <rect key="frame" x="55" y="440" width="304" height="30"/>
+                                <rect key="frame" x="55" y="396" width="304" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AZf-KR-znT"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="304" id="eTS-jn-Ozy"/>
@@ -41,7 +41,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Re-enter Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hu9-re-b0C">
-                                <rect key="frame" x="55" y="516" width="304" height="30"/>
+                                <rect key="frame" x="55" y="472" width="304" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="304" id="Pfk-V1-oj3"/>
                                     <constraint firstAttribute="height" constant="30" id="bc7-4t-Ez4"/>
@@ -52,14 +52,14 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-uq-Xfx">
-                                <rect key="frame" x="64" y="595" width="47" height="30"/>
+                                <rect key="frame" x="64" y="551" width="47" height="74"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <action selector="signIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="p4B-W3-kBd"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9E-go-ciN">
-                                <rect key="frame" x="164" y="595" width="57" height="30"/>
+                                <rect key="frame" x="164" y="551" width="57" height="74"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
                                     <action selector="createUser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XSd-l7-JEn"/>
@@ -330,13 +330,13 @@
         <!--Settings-->
         <scene sceneID="Qsh-sU-WbW">
             <objects>
-                <viewController title="Settings" id="IKJ-ul-ETa" sceneMemberID="viewController">
+                <viewController title="Settings" id="IKJ-ul-ETa" customClass="SettingsViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eoD-ab-vZK">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMK-hZ-OfZ">
-                                <rect key="frame" x="107" y="128" width="200" height="200"/>
+                                <rect key="frame" x="107" y="84" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="200" id="8bh-iC-i3g"/>
                                     <constraint firstAttribute="width" constant="200" id="MXd-4K-lrd"/>
@@ -347,7 +347,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="Sign out"/>
                                 <connections>
-                                    <action selector="signOut:" destination="Rlm-tw-AE0" eventType="touchUpInside" id="SDI-5Y-IIL"/>
+                                    <action selector="signOutButton:" destination="IKJ-ul-ETa" eventType="touchUpInside" id="4F6-ef-3qV"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E2H-e2-iMx">
@@ -359,7 +359,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password Manager" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GHM-h4-32P">
-                                <rect key="frame" x="84" y="392" width="246" height="36"/>
+                                <rect key="frame" x="84" y="348" width="246" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -382,9 +382,11 @@
                     <navigationItem key="navigationItem" title="Settings" id="S4G-dy-sgd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="EHn-BE-dRY"/>
                     </navigationItem>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="signOutSegue" id="E0v-dP-X0f"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vb-mM-D4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="Rlm-tw-AE0" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-436" y="2212"/>
         </scene>
@@ -508,5 +510,6 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="NHE-Yk-fHc"/>
+        <segue reference="E0v-dP-X0f"/>
     </inferredMetricsTieBreakers>
 </document>
