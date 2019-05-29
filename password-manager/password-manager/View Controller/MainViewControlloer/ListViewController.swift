@@ -13,7 +13,7 @@ class ListViewController: UITableViewController {
     let userId = Auth.auth().currentUser?.uid
     
     override func viewDidAppear(_ animated: Bool) {
-        print("userid: \(userId!)")
+//        print("userid: \(userId!)")
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PasswordListCell", for: indexPath)

@@ -25,8 +25,8 @@ class SettingsViewController: UIViewController {
             self.userDefaults.synchronize()
             
             if let storyboard = self.storyboard {
-                let authViewController = storyboard.instantiateViewController(withIdentifier: "authViewController") as UIViewController
-                self.present(authViewController, animated: true, completion: nil)
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "initialViewController") as! UINavigationController
+                self.present(initialViewController, animated: true, completion: nil)
             }
         } catch let error as NSError {
             print ("sign out error",error.localizedDescription)
