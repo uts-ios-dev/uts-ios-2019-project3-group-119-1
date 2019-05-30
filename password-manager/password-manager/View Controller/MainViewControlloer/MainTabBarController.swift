@@ -10,9 +10,6 @@ import UIKit
 import Firebase
 
 class MainTabBarController: UITabBarController {
-    
-    var db: DatabaseReference!
-
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true

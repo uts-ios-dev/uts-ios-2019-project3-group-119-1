@@ -16,10 +16,8 @@ class Credential {
     var username: String?
     var website: String?
     var password: String?
-    let auth: AuthenticatedUser
-    
-    init() {
-        auth = AuthenticatedUser()
+    var user: AuthenticatedUser {
+        get { return AuthenticatedUser.instance }
     }
     
     func regeneratePassword() {
@@ -56,7 +54,7 @@ class Credential {
         let website = self.website!
         
         // Encrypt all details using hash of UID
-        let uid = auth.user.uid.digest.sha256        
+        let uid = user.uidHash
         let encryptedPassword = password.encrypt(withPassword: uid)
         let encryptedUsername = username.encrypt(withPassword: uid)
         let encryptedWebsite = website.encrypt(withPassword: uid)
@@ -69,6 +67,31 @@ class Credential {
           .setValue(["username": encryptedUsername,
                      "website": encryptedWebsite,
                      "password": encryptedPassword])
+          {(error, dbRef) in
+            if let error = error {
+                print("Error: \(error.localizedDescription)")
+            }
+            else {
+                print("Successfully saved to Firebase.")
+            }
+          }
         
+    }
+    
+    // Decrypt this credential using the authenticated user
+    func decrypt() throws {
+        
+        // Only decrypt when the fields are available
+        guard let usn = username,
+              let pw = password,
+              let url = website else {
+            throw CredentialError.incompleteCredential
+        }
+        
+        let uid = user.uidHash
+        
+        username = try usn.decrypt(withPassword: uid)
+        password = try pw.decrypt(withPassword: uid)
+        website = try url.decrypt(withPassword: uid)
     }
 }
