@@ -12,6 +12,7 @@
 		1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */; };
 		1F1A6C13228E75FE006A0C36 /* EditCredentialsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0E228E75FE006A0C36 /* EditCredentialsViewController.swift */; };
 		1F1A6C14228E75FE006A0C36 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */; };
+		1F9E79B0229FBD5400B3E3A9 /* CryptoError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F9E79AF229FBD5400B3E3A9 /* CryptoError.swift */; };
 		1FA9D3F9229261ED0051206C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1FA9D3F8229261ED0051206C /* GoogleService-Info.plist */; };
 		1FA9D3FB229261FF0051206C /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 1FA9D3FA229261FF0051206C /* Podfile */; };
 		1FA9D3FE22927BA50051206C /* AuthenticatedUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA9D3FD22927BA50051206C /* AuthenticatedUser.swift */; };
@@ -33,6 +34,7 @@
 		1F1A6C0D228E75FE006A0C36 /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		1F1A6C0E228E75FE006A0C36 /* EditCredentialsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCredentialsViewController.swift; sourceTree = "<group>"; };
 		1F1A6C0F228E75FE006A0C36 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		1F9E79AF229FBD5400B3E3A9 /* CryptoError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoError.swift; sourceTree = "<group>"; };
 		1FA9D3F8229261ED0051206C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1FA9D3FA229261FF0051206C /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		1FA9D3FD22927BA50051206C /* AuthenticatedUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedUser.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			children = (
 				1FA9D3FD22927BA50051206C /* AuthenticatedUser.swift */,
 				1FA9D3FF229283EA0051206C /* Credential.swift */,
+				1F9E79AF229FBD5400B3E3A9 /* CryptoError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,6 +273,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/PwGen/PwGen.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyHash/SwiftyHash.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -281,6 +285,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PwGen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -308,6 +313,7 @@
 				9000D51C228E642B00703D17 /* password_manager.xcdatamodeld in Sources */,
 				9000D514228E642B00703D17 /* AppDelegate.swift in Sources */,
 				1F1A6C14228E75FE006A0C36 /* SettingsViewController.swift in Sources */,
+				1F9E79B0229FBD5400B3E3A9 /* CryptoError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

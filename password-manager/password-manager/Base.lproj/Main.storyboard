@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eaM-w6-qaU">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,7 +63,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1089.8550724637682" y="-197.28260869565219"/>
+            <point key="canvasLocation" x="-2810" y="-197"/>
         </scene>
         <!--Passwords-->
         <scene sceneID="atc-xe-uRk">
@@ -123,15 +123,14 @@
                             <outlet property="delegate" destination="MGt-gJ-GaA" id="Xbp-Eu-L0p"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Passwords" id="EZk-y1-dwB"/>
                     <navigationItem key="navigationItem" title="Password Manager" id="5xc-Jf-yk1"/>
                     <connections>
-                        <segue destination="8GH-80-9pS" kind="show" id="1tL-3X-mBu"/>
+                        <segue destination="UDx-W8-FmO" kind="show" id="1tL-3X-mBu"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SD-4g-7B0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="563"/>
+            <point key="canvasLocation" x="255.07246376811597" y="562.5"/>
         </scene>
         <!--Password Manager-->
         <scene sceneID="0xG-GX-SJV">
@@ -143,14 +142,14 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="MGt-gJ-GaA" kind="relationship" relationship="viewControllers" id="Hrd-NB-yyG"/>
-                        <segue destination="8GH-80-9pS" kind="relationship" relationship="viewControllers" id="NHE-Yk-fHc"/>
-                        <segue destination="IKJ-ul-ETa" kind="relationship" relationship="viewControllers" id="xqj-il-iXd"/>
+                        <segue destination="kpO-id-lin" kind="relationship" relationship="viewControllers" id="Hrd-NB-yyG"/>
+                        <segue destination="UDx-W8-FmO" kind="relationship" relationship="viewControllers" id="NHE-Yk-fHc"/>
+                        <segue destination="Hok-wb-QHV" kind="relationship" relationship="viewControllers" id="xqj-il-iXd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kjn-Q1-uWC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1997" y="931"/>
+            <point key="canvasLocation" x="-1997" y="563"/>
         </scene>
         <!--Email Verification View Controller-->
         <scene sceneID="T1B-J0-OWB">
@@ -193,7 +192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buL-iK-BcX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-288" y="-197"/>
+            <point key="canvasLocation" x="-1997" y="-197"/>
         </scene>
         <!--Edit Password-->
         <scene sceneID="VCa-Ci-JRI">
@@ -308,7 +307,6 @@
                             <outlet property="delegate" destination="8GH-80-9pS" id="zxs-92-i0P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="New" id="0Gs-qF-ob4"/>
                     <navigationItem key="navigationItem" title="New Password" id="QJx-zW-jbq">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Xss-uj-TxW">
                             <connections>
@@ -325,7 +323,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bFA-Ag-twP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="187" y="1396"/>
+            <point key="canvasLocation" x="255" y="1326"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Qsh-sU-WbW">
@@ -375,12 +373,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTN-F4-Lej"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="zzE-Mo-uCG"/>
                     <navigationItem key="navigationItem" title="Settings" id="L8V-eP-nxf"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9vb-mM-D4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-436" y="2212"/>
+            <point key="canvasLocation" x="255" y="2036"/>
         </scene>
         <!--Account Settings-->
         <scene sceneID="dNv-kR-EyD">
@@ -479,25 +476,64 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wmh-KN-SJM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="533" y="2212"/>
+            <point key="canvasLocation" x="1209" y="2036"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uAE-kn-Rsu">
+        <!--Passwords-->
+        <scene sceneID="W6D-5O-eTt">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eaM-w6-qaU" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kpO-id-lin" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Passwords" id="EZk-y1-dwB"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Rbz-kG-4JD">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eqo-l6-CMU">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="tw8-Ou-Z8O"/>
+                        <segue destination="MGt-gJ-GaA" kind="relationship" relationship="rootViewController" id="mi8-nk-0jx"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="18L-Ai-NSW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aB7-Ui-nPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1997.1014492753625" y="-197.28260869565219"/>
+            <point key="canvasLocation" x="-652.17391304347836" y="562.5"/>
+        </scene>
+        <!--New-->
+        <scene sceneID="fvG-ue-pyr">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="UDx-W8-FmO" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="New" id="0Gs-qF-ob4"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6rx-g7-wvt">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8GH-80-9pS" kind="relationship" relationship="rootViewController" id="Y4W-oK-TQz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4aW-BI-Agz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="1326"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="HTc-Rg-sd3">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Hok-wb-QHV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Settings" id="zzE-Mo-uCG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7xf-f9-Ked">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="IKJ-ul-ETa" kind="relationship" relationship="rootViewController" id="uth-AO-qSg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jG9-RY-VX5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-652" y="2036"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

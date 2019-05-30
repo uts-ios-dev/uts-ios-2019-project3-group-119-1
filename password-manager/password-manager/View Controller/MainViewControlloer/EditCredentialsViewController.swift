@@ -21,6 +21,7 @@ class EditCredentialsViewController: UITableViewController {
         
         credential = Credential()
         regeneratePassword()
+        validateCredentials()
     }
     
     private func regeneratePassword() {
@@ -50,7 +51,6 @@ class EditCredentialsViewController: UITableViewController {
     private func validateCredentials() {
         let isValid = credential.validate()
         saveButton.isEnabled = isValid
-        print("details valid: \(isValid)")
     }
     
     @IBAction private func onSaveButtonPressed() {

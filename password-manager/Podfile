@@ -16,4 +16,5 @@ target 'password-manager' do
   # Credentials
   pod 'PwGen'
   pod 'RNCryptor'
+  pod 'SwiftyHash'
 end

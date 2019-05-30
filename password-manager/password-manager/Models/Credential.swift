@@ -9,16 +9,17 @@
 import Foundation
 import PwGen
 import RNCryptor
+import SwiftyHash
 import Firebase
 
 class Credential {
     var username: String?
     var website: String?
     var password: String?
-    let user: AuthenticatedUser!
+    let auth: AuthenticatedUser
     
     init() {
-        user = AuthenticatedUser()
+        auth = AuthenticatedUser()
     }
     
     func regeneratePassword() {
@@ -26,7 +27,7 @@ class Credential {
         // for now using predefined settings,
         // but given the parametric nature of the library,
         // this can be easily expanded later.
-        password = try! PwGen().ofSize(20).generate()
+        password = try! PwGen().ofSize(20).withoutSymbols().generate()
     }
     
     // Returns whether this credential is valid
@@ -46,21 +47,28 @@ class Credential {
     }
     
     func save() {
-        print("pressed save")
-        
         guard validate() else {
             return
         }
         
-        let encryptedPassword = RNCryptor.encrypt(data: password!.data(using: .utf32)!, withPassword: user.user.uid)
-        // decrypt: RNCryptor.decrypt() -> NSData, then use String(data:encoding:)
+        let password = self.password!
+        let username = self.username!
+        let website = self.website!
         
-        // Structure: [PWMRoot]/Credentials/UID/USN+URL/[json]
-        // [json]: username, url, encryptedPassword
+        // Encrypt all details using hash of UID
+        let uid = auth.user.uid.digest.sha256        
+        let encryptedPassword = password.encrypt(withPassword: uid)
+        let encryptedUsername = username.encrypt(withPassword: uid)
+        let encryptedWebsite = website.encrypt(withPassword: uid)
+        
+        // Structure: [PWMRoot]/Credentials/UID/hashOf(USN+URL)/[json]
         let db = Database.database().reference()
-        db.child("Credentials/\(user.user.uid)/\(username)+\(website)")
-          .setValue(["username": username,
-                     "url": website,
-                     "encryptedPassword": encryptedPassword])
+        let credHash = "\(username)+\(website)".digest.sha256
+        let dbPath = "Credentials/\(uid)/\(credHash)"
+        db.child(dbPath)
+          .setValue(["username": encryptedUsername,
+                     "website": encryptedWebsite,
+                     "password": encryptedPassword])
+        
     }
 }

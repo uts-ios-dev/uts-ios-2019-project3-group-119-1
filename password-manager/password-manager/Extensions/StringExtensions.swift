@@ -7,6 +7,8 @@
 //
 
 import Foundation
+import RNCryptor
+
 extension String {
     func isValidEmail() -> Bool {
         // https://stackoverflow.com/a/39550723
@@ -30,5 +32,28 @@ extension String {
         """#
         let regex = try! NSRegularExpression(pattern: regexPattern, options: .caseInsensitive)
         return regex.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count)) != nil
+    }
+    
+    // Return a base64-encoded string encrypted with password
+    func encrypt(withPassword password: String) -> String {
+        let data = self.data(using: .utf8)!
+        let encryptedData = RNCryptor.encrypt(data: data, withPassword: password)
+        return encryptedData.base64EncodedString()
+    }
+    
+    // Decrypt a base64-encoded password-encrypted string
+    func decrypt(withPassword password: String) throws -> String {
+        do {
+            let encrypted = Data(base64Encoded: self)
+            let decryptedData = try RNCryptor.decrypt(data: encrypted!, withPassword: password)
+            
+            guard let decryptedPassword = String(data: decryptedData, encoding: .utf8) else {
+                throw CryptoError.invalidPassword
+            }
+            return decryptedPassword
+        } catch {
+            throw CryptoError.invalidPassword
+        }
+        
     }
 }
