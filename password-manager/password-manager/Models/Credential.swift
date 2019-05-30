@@ -44,7 +44,8 @@ class Credential {
         return username.isValidEmail() && website.isValidUrl()
     }
     
-    func save() {
+    // If saving to an existing cred, supply a cred id
+    func save(withCredId credId: String? = nil) {
         guard validate() else {
             return
         }
@@ -62,7 +63,16 @@ class Credential {
         // Structure: [PWMRoot]/Credentials/UID/hashOf(USN+URL)/[json]
         let db = Database.database().reference()
         let credHash = "\(username)+\(website)".digest.sha256
-        let dbPath = "Credentials/\(uid)/\(credHash)"
+        
+        // Use cred ID (if supplied, for updating existing details)
+        // instead of new hash
+        var dbPath = ""
+        if let credId = credId {
+            dbPath = "Credentials/\(uid)/\(credId)"
+        } else {
+            dbPath = "Credentials/\(uid)/\(credHash)"
+        }
+        
         db.child(dbPath)
           .setValue(["username": encryptedUsername,
                      "website": encryptedWebsite,

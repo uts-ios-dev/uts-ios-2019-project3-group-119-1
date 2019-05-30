@@ -10,6 +10,8 @@ import UIKit
 
 class EditCredentialsViewController: UITableViewController {
     private var credential: Credential!
+    public var isNewCredential: Bool = true
+    private var credId: String?
     
     @IBOutlet private weak var usernameField: UITextField!
     @IBOutlet private weak var passwordField: UITextField!
@@ -19,9 +21,22 @@ class EditCredentialsViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        credential = Credential()
-        regeneratePassword()
-        validateCredentials()
+        if isNewCredential {
+            credential = Credential()
+            regeneratePassword()
+            validateCredentials()
+        } else {
+            usernameField.text = credential.username
+            passwordField.text = credential.password
+            websiteField.text = credential.website
+        }
+        
+    }
+    
+    public func editFor(_ cred: Credential, credId: String) {
+        isNewCredential = false
+        credential = cred
+        self.credId = credId
     }
     
     private func regeneratePassword() {
@@ -54,6 +69,11 @@ class EditCredentialsViewController: UITableViewController {
     }
     
     @IBAction private func onSaveButtonPressed() {
-        credential.save()
+        if isNewCredential {
+            credential.save()
+        }
+        else {
+            credential.save(withCredId: credId)
+        }
     }
 }

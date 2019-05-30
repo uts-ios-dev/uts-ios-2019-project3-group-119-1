@@ -126,6 +126,7 @@
                     <navigationItem key="navigationItem" title="Password Manager" id="5xc-Jf-yk1"/>
                     <connections>
                         <segue destination="UDx-W8-FmO" kind="show" id="1tL-3X-mBu"/>
+                        <segue destination="8GH-80-9pS" kind="show" identifier="editPassword" id="JmJ-EI-XN8"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9SD-4g-7B0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -537,7 +538,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="1tL-3X-mBu"/>
+        <segue reference="NHE-Yk-fHc"/>
+        <segue reference="JmJ-EI-XN8"/>
         <segue reference="5wb-ad-AnE"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -9,8 +9,7 @@
 import UIKit
 import Firebase
 
-class ListViewController: UITableViewController, AuthenticatedUserObserver {
-    
+class ListViewController: UITableViewController, AuthenticatedUserObserver {    
     var user: AuthenticatedUser!
     var dbRef: DatabaseReference!
     
@@ -32,6 +31,8 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
     }
 
     private var credentials: [Credential] = []
+    private var credentialIDs: [String] = []
+    
     private func reloadData() {
         dbRef.child(user.dbCredentialsPath)
              .observeSingleEvent(of: .value, with: {(snapshot) in
@@ -41,10 +42,16 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
                 
                 // Reset the array
                 self.credentials = []
+                self.credentialIDs = []
                 
                 // Rebuilt the array
-                for cred in creds.allValues {
+                let credKeys = creds.allKeys
+                let credVals = creds.allValues
+                for i in 0..<creds.allKeys.count {
+                    let cred = credVals[i]
+                    let credId = credKeys[i]
                     guard let credentialRaw = cred as? NSDictionary else { return }
+                    guard let credentialID = credId as? String else { return }
                     
                     let credential = Credential()
                     credential.username = credentialRaw["username"] as? String
@@ -66,6 +73,10 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
                     catch {
                         print("Unknown error")
                     }
+                    
+                    // The credential decryption worked,
+                    // now save the key
+                    self.credentialIDs.append(credentialID)
                 }
                 
                 // Reload the table
@@ -96,6 +107,17 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
         return 1
     }
     
-    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        credEditIndex = indexPath.row
+        performSegue(withIdentifier: "editPassword", sender: nil)
+    }
 
+    private var credEditIndex: Int = -1
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let editVC = segue.destination as? EditCredentialsViewController {
+            editVC.editFor(credentials[credEditIndex],
+                           credId: credentialIDs[credEditIndex])
+        }
+    }
 }
