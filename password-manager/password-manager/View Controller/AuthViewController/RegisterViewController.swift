@@ -11,18 +11,21 @@ import Firebase
 import SCLAlertView
 
 class RegisterViewController: UIViewController {
+    var authentication: Authentication = Authentication()
+    //outlets
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var passwordConfirmField: UITextField!
     
     @IBOutlet weak var registerButton: UIButton!
     
-    let userDefaults = UserDefaults.standard
-    
-    var loginView: LoginViewController?
-    
     @IBAction func signUp(_ sender: UIButton) {
-        self.register(withEmail: emailField.text!, password: passwordField.text!, passwordConfirm: passwordConfirmField.text!)
+        if passwordField.text! != passwordConfirmField.text! {
+            SCLAlertView().showError("Register Error", subTitle: "Please check your password")
+            return
+        } else {
+            authentication.register(withEmail: emailField.text!, password: passwordField.text!)
+        }
     }
     
     override func viewDidLoad() {
@@ -51,28 +54,5 @@ class RegisterViewController: UIViewController {
                 return
         }
         registerButton.isEnabled = true
-    }
-    
-    func register(withEmail email: String, password: String, passwordConfirm: String) {
-        Auth.auth().createUser(withEmail: email, password: password) {
-            (authResult, error) in
-            if password != passwordConfirm {
-                SCLAlertView().showError("Register Error", subTitle: "Please check your password")
-                return
-            } else {
-                switch error {
-                case .some(let error as NSError) where error.code == AuthErrorCode.emailAlreadyInUse.rawValue:
-                    SCLAlertView().showError("Reigster Error", subTitle: "email already in use")
-                    return
-                case .some(let error):
-                    SCLAlertView().showError("Reigster Error", subTitle: error.localizedDescription)
-                    return
-                case .none:
-                    //no register error
-                    //no working
-                    self.loginView?.login(withEmail: email, passowrd: password, segue_id: "registerToMainSegue")
-                }
-            }
-        }
     }
 }
