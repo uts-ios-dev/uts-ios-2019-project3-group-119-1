@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditCredentialsViewController: UITableViewController {
+class EditCredentialsViewController: UITableViewController, CredentialCallback {
     private var credential: Credential!
     public var isNewCredential: Bool = true
     private var credId: String?
@@ -72,18 +72,25 @@ class EditCredentialsViewController: UITableViewController {
     
     @IBAction private func onSaveButtonPressed() {
         if isNewCredential {
-            credential.save()
+            credential.save(callback: self)
         }
         // Editing an existing password
         else {
-            credential.save(withCredId: credId)
-            
-            // After edit, go back
-            self.navigationController?.popViewController(animated: true)
+            credential.save(withCredId: credId, callback: self)
         }
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func onSaveError() {
+        // TODO: popup:
+        self.navigationController?.popViewController(animated: true)
+    }
+    
+    func onSaveSuccessful() {
+        // TODO: popup
+        self.navigationController?.popViewController(animated: true)
     }
 }
