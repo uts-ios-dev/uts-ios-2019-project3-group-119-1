@@ -78,4 +78,8 @@ class EditCredentialsViewController: UITableViewController {
             credential.save(withCredId: credId)
         }
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
