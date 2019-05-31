@@ -21,7 +21,7 @@ class LoginViewController: UIViewController {
         authentication.login(withEmail: emailField.text!, passowrd: passwordField.text! )
     }
     
-    //detect whether user is editing
+    //detect whether user enters the first character
     @objc func editingChanged(_ textField: UITextField) {
         if textField.text?.count == 1 {
             if textField.text?.first == " " {
@@ -44,6 +44,7 @@ class LoginViewController: UIViewController {
         
         self.signInButton.isEnabled = false
         
+        //listen to text field change
         [emailField, passwordField].forEach({
             $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         })
