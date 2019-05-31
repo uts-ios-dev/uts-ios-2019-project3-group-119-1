@@ -18,21 +18,31 @@ class EditCredentialsViewController: UITableViewController, CredentialCallback {
     @IBOutlet private weak var websiteField: UITextField!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        // Set up interface for new credential
         if isNewCredential {
+            usernameField.text = ""
+            passwordField.text = ""
+            websiteField.text = ""
+            
             credential = Credential()
             regeneratePassword()
             validateCredentials()
+            
             self.title = "New Password"
+            
+        // Set up interface for editing
+        // The information is set in editFor() before the
+        // view controller appears
         } else {
             usernameField.text = credential.username
             passwordField.text = credential.password
             websiteField.text = credential.website
+            
             self.title = "Edit Password"
         }
-        
     }
     
     public func editFor(_ cred: Credential, credId: String) {
