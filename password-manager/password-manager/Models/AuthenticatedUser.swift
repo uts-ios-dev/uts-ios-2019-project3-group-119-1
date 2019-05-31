@@ -42,6 +42,7 @@ class AuthenticatedUser {
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 self.user = user
+                self.informObserversSignedIn()
             }
         }
     }
