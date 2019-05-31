@@ -187,23 +187,23 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="87.666666666666671"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="G7Q-MO-psX">
-                                            <rect key="frame" x="0.0" y="0.0" width="88" height="87.666666666666671"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Globe" translatesAutoresizingMaskIntoConstraints="NO" id="G7Q-MO-psX">
+                                            <rect key="frame" x="0.0" y="0.0" width="66" height="87.666666666666671"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="88" id="o9w-P6-jAi"/>
+                                                <constraint firstAttribute="width" constant="66" id="o9w-P6-jAi"/>
                                             </constraints>
                                         </imageView>
                                         <stackView opaque="NO" tag="20000" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="IVp-5f-iJF">
-                                            <rect key="frame" x="104" y="0.0" width="310" height="87.666666666666671"/>
+                                            <rect key="frame" x="82" y="0.0" width="332" height="87.666666666666671"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="20001" contentMode="left" horizontalHuggingPriority="251" text="test@test.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EUC-k6-qBL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="310" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="332" height="44"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" tag="20002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.abc.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y6a-L8-hcL">
-                                                    <rect key="frame" x="0.0" y="44" width="310" height="43.666666666666657"/>
+                                                    <rect key="frame" x="0.0" y="44" width="332" height="43.666666666666657"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -229,7 +229,7 @@
                             <outlet property="delegate" destination="MGt-gJ-GaA" id="Xbp-Eu-L0p"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Passwords" id="EZk-y1-dwB"/>
+                    <tabBarItem key="tabBarItem" title="Passwords" image="List" selectedImage="List" id="EZk-y1-dwB"/>
                     <navigationItem key="navigationItem" title="Passwords" id="G2t-vq-iMX"/>
                     <connections>
                         <segue destination="8GH-80-9pS" kind="show" id="1tL-3X-mBu"/>
@@ -244,7 +244,7 @@
             <objects>
                 <tabBarController title="Password Manager" id="hd5-Zi-Uhw" customClass="MainTabBarController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="UoC-oR-k3B"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bHe-Sm-iNV">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="bHe-Sm-iNV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -360,7 +360,7 @@
                             <outlet property="delegate" destination="8GH-80-9pS" id="zxs-92-i0P"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="New" id="0Gs-qF-ob4"/>
+                    <tabBarItem key="tabBarItem" title="New" image="AddKey" selectedImage="AddKey" id="0Gs-qF-ob4"/>
                     <navigationItem key="navigationItem" title="New Password" id="4xG-eX-ULR">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="0nK-7m-WQx"/>
                     </navigationItem>
@@ -377,13 +377,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oMK-hZ-OfZ">
-                                <rect key="frame" x="107" y="128" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="8bh-iC-i3g"/>
-                                    <constraint firstAttribute="width" constant="200" id="MXd-4K-lrd"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="foi-mG-diC">
                                 <rect key="frame" x="178.66666666666666" y="641" width="57" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -406,6 +399,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Safe" translatesAutoresizingMaskIntoConstraints="NO" id="oMK-hZ-OfZ">
+                                <rect key="frame" x="157" y="259" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="8bh-iC-i3g"/>
+                                    <constraint firstAttribute="width" constant="100" id="MXd-4K-lrd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -413,14 +413,14 @@
                             <constraint firstItem="hTN-F4-Lej" firstAttribute="bottom" secondItem="foi-mG-diC" secondAttribute="bottom" constant="16" id="9oq-2B-2dD"/>
                             <constraint firstItem="oMK-hZ-OfZ" firstAttribute="centerX" secondItem="eoD-ab-vZK" secondAttribute="centerX" id="C2H-vt-kbn"/>
                             <constraint firstItem="GHM-h4-32P" firstAttribute="centerX" secondItem="eoD-ab-vZK" secondAttribute="centerX" id="RN3-4m-Cgn"/>
-                            <constraint firstItem="oMK-hZ-OfZ" firstAttribute="top" secondItem="hTN-F4-Lej" secondAttribute="top" constant="64" id="UrV-mv-ec8"/>
+                            <constraint firstItem="oMK-hZ-OfZ" firstAttribute="top" secondItem="hTN-F4-Lej" secondAttribute="top" constant="195" id="UrV-mv-ec8"/>
                             <constraint firstItem="E2H-e2-iMx" firstAttribute="centerX" secondItem="eoD-ab-vZK" secondAttribute="centerX" id="glL-vR-KU3"/>
-                            <constraint firstItem="GHM-h4-32P" firstAttribute="top" secondItem="oMK-hZ-OfZ" secondAttribute="bottom" constant="64" id="jJE-AQ-svq"/>
+                            <constraint firstItem="GHM-h4-32P" firstAttribute="top" secondItem="oMK-hZ-OfZ" secondAttribute="bottom" constant="33" id="jJE-AQ-svq"/>
                             <constraint firstItem="foi-mG-diC" firstAttribute="top" secondItem="E2H-e2-iMx" secondAttribute="bottom" constant="16" id="zjg-9d-sC0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hTN-F4-Lej"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="zzE-Mo-uCG"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="Cogs" selectedImage="Cogs" id="zzE-Mo-uCG"/>
                     <navigationItem key="navigationItem" title="Settings" id="S4G-dy-sgd">
                         <barButtonItem key="backBarButtonItem" title="Back" id="EHn-BE-dRY"/>
                     </navigationItem>
@@ -557,8 +557,15 @@
             <point key="canvasLocation" x="-2096" y="51"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AddKey" width="20" height="20"/>
+        <image name="Cogs" width="20" height="20"/>
+        <image name="Globe" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="List" width="20" height="20"/>
+        <image name="Safe" width="90" height="90"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1tL-3X-mBu"/>
+        <segue reference="NHE-Yk-fHc"/>
         <segue reference="MYp-WO-0se"/>
     </inferredMetricsTieBreakers>
 </document>
