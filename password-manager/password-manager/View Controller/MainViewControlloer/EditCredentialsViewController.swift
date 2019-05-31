@@ -86,11 +86,21 @@ class EditCredentialsViewController: UITableViewController, CredentialCallback {
     
     func onSaveError() {
         // TODO: popup:
-        self.navigationController?.popViewController(animated: true)
+        popBack()
     }
     
     func onSaveSuccessful() {
         // TODO: popup
-        self.navigationController?.popViewController(animated: true)
+        popBack()
+    }
+    
+    private func popBack() {
+        if isNewCredential {
+            // Is not editing, so switch tab
+            self.tabBarController?.selectedIndex = 0
+        } else {
+            // Is editing, so will pop back
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
