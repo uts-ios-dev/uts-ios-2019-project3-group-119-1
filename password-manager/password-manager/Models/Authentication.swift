@@ -43,7 +43,7 @@ class Authentication {
             switch error {
             case .some(let error as NSError) where error.code == AuthErrorCode.emailAlreadyInUse.rawValue:
                 SCLAlertView().showError("Reigster Error", subTitle: "email already in use")
-               SwiftOverlays.removeAllBlockingOverlays()
+                SwiftOverlays.removeAllBlockingOverlays()
             case .some(let error):
                 SCLAlertView().showError("Reigster Error", subTitle: error.localizedDescription)
                 SwiftOverlays.removeAllBlockingOverlays()
@@ -52,6 +52,20 @@ class Authentication {
                 if let user = authResult?.user {
                     print (user.uid)
                 }
+                SwiftOverlays.removeAllBlockingOverlays()
+            }
+        }
+    }
+    
+    func resetPassword(currentPassword: String, newPassword: String) {
+        SwiftOverlays.showBlockingWaitOverlayWithText("resetting")
+        Auth.auth().currentUser?.updatePassword(to: newPassword ) {
+            error in
+            if let error = error {
+                SCLAlertView().showError("Reset Error", subTitle: error.localizedDescription)
+                SwiftOverlays.removeAllBlockingOverlays()
+            } else {
+                SCLAlertView().showSuccess("Reset Successfully", subTitle: "Successful")
                 SwiftOverlays.removeAllBlockingOverlays()
             }
         }
