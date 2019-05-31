@@ -50,7 +50,10 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
         
         dbRef.child(user.dbCredentialsPath)
              .observeSingleEvent(of: .value, with: {(snapshot) in
-                guard let creds = snapshot.value as? NSDictionary else { return }
+                guard let creds = snapshot.value as? NSDictionary else {
+                    SwiftOverlays.removeAllBlockingOverlays()
+                    return                    
+                }
                 
                 // Has credentials to display
                 
