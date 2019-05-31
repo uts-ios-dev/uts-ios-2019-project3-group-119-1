@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import SCLAlertView
+import SwiftOverlays
 
 class ListViewController: UITableViewController, AuthenticatedUserObserver {    
     var user: AuthenticatedUser!
@@ -45,6 +46,8 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
     private var credentialIDs: [String] = []
     
     private func reloadData() {
+        SwiftOverlays.showBlockingWaitOverlayWithText("Loading...")
+        
         dbRef.child(user.dbCredentialsPath)
              .observeSingleEvent(of: .value, with: {(snapshot) in
                 guard let creds = snapshot.value as? NSDictionary else { return }
@@ -92,6 +95,7 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
                 
                 // Reload the table
                 self.tableView.reloadData()
+                SwiftOverlays.removeAllBlockingOverlays()
              })
     }
     
