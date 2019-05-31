@@ -26,9 +26,24 @@ class AuthenticatedUser {
     }
     // End singleton parts
     
-    var observers: [AuthenticatedUserObserver]
+    // Observers
+    private var observers: [String: AuthenticatedUserObserver] = [:]
+    public func addObserver(observer: AuthenticatedUserObserver) -> String {
+        let id = NSUUID().uuidString;
+        observers[id] = observer
+        return id
+    }
+    public func removeObserver(id: String) {
+        observers[id] = nil
+    }
+    // End observers
+    
+    
     
     var user: User!
+    public var hasSignedIn: Bool {
+        get { return user != nil }
+    }
     var uidHash: String {
         get { return user.uid.digest.sha256 }
     }
@@ -37,7 +52,7 @@ class AuthenticatedUser {
     }
     
     private init() {
-        observers = []
+        observers = [:]
         
         Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
@@ -49,7 +64,7 @@ class AuthenticatedUser {
     
     private func informObserversSignedIn() {        
         for observer in observers {
-            observer.onSignedIn()
+            observer.value.onSignedIn()
         }
     }
 }

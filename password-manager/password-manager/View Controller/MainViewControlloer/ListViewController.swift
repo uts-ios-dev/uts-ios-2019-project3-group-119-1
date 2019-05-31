@@ -12,21 +12,31 @@ import Firebase
 class ListViewController: UITableViewController, AuthenticatedUserObserver {    
     var user: AuthenticatedUser!
     var dbRef: DatabaseReference!
+    private var observerId: String?
     
-    internal override func viewDidLoad() {
-        super.viewDidLoad()
+    internal override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         dbRef = Database.database().reference()
         user = AuthenticatedUser.instance
         credentials = []
         
-        user.observers.append(self)
+        observerId = user.addObserver(observer: self)
+        if user.hasSignedIn {
+            reloadData()
+        }
+    }
+    
+    internal override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        if let id = observerId {
+            user.removeObserver(id: id)
+            observerId = nil
+        }
     }
     
     func onSignedIn() {
-        reloadData()
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
         reloadData()
     }
 
