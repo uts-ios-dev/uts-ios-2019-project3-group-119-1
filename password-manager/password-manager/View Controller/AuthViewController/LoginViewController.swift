@@ -9,17 +9,20 @@
 import UIKit
 import Firebase
 import SCLAlertView
+import SwiftOverlays
 
 class LoginViewController: UIViewController {
     var authentication: Authentication = Authentication()
+    var loginHandler: AuthStateDidChangeListenerHandle!
     //outlets
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
     
-    @IBAction func signIn(_ sender: UIButton) {
+    @IBAction func signIn(_ sender: UIButton) {        
         authentication.login(withEmail: emailField.text!, passowrd: passwordField.text! )
     }
+    
     
     //detect whether user enters the first character
     @objc func editingChanged(_ textField: UITextField) {
@@ -48,14 +51,18 @@ class LoginViewController: UIViewController {
         [emailField, passwordField].forEach({
             $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         })
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        Auth.auth().addStateDidChangeListener { (auth, user) in
+        self.loginHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
             if user != nil {
                 self.performSegue(withIdentifier: "loginToMainSegue", sender: self)
             }
         }
     }
-
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(self.loginHandler)
+    }
 }

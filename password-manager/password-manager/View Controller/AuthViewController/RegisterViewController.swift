@@ -12,6 +12,7 @@ import SCLAlertView
 
 class RegisterViewController: UIViewController {
     var authentication: Authentication = Authentication()
+     var registerHandler: AuthStateDidChangeListenerHandle!
     //outlets
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -26,6 +27,7 @@ class RegisterViewController: UIViewController {
         } else {
             authentication.register(withEmail: emailField.text!, password: passwordField.text!)
         }
+        
     }
     
     override func viewDidLoad() {
@@ -35,7 +37,18 @@ class RegisterViewController: UIViewController {
         [emailField, passwordField, passwordConfirmField].forEach({
             $0?.addTarget(self, action: #selector(editingChanged), for: .editingChanged)
         })
+    }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.registerHandler = Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.performSegue(withIdentifier: "registerToMainSegue", sender: self)
+            }
+        }
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        Auth.auth().removeStateDidChangeListener(self.registerHandler)
     }
     
     @objc func editingChanged(_ textField: UITextField) {
