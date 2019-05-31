@@ -74,8 +74,12 @@ class EditCredentialsViewController: UITableViewController {
         if isNewCredential {
             credential.save()
         }
+        // Editing an existing password
         else {
             credential.save(withCredId: credId)
+            
+            // After edit, go back
+            self.navigationController?.popViewController(animated: true)
         }
     }
     
