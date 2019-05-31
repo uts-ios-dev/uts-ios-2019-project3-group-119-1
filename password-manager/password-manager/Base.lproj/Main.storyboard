@@ -13,7 +13,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="authViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="initialViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="password_manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,7 +44,7 @@
                                 </constraints>
                                 <state key="normal" title="Don't have an account? Sign Up"/>
                                 <connections>
-                                    <segue destination="ZhR-Ux-dqi" kind="show" id="Upm-rR-oM5"/>
+                                    <segue destination="ZhR-Ux-dqi" kind="showDetail" id="Upm-rR-oM5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-uq-Xfx">
@@ -138,11 +138,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="email"/>
                             </textField>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wqo-qv-qG2">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="wxf-Cx-XfQ"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cbt-ut-sG4"/>
+                                    <barButtonItem title="Cancel" id="jHZ-T0-ypZ">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="showDetail" id="kro-FC-t8B"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="OZe-Ly-7hc" firstAttribute="top" secondItem="mbA-kl-66f" secondAttribute="top" constant="298" id="3nJ-nM-gKh"/>
                             <constraint firstItem="snV-hv-QBN" firstAttribute="leading" secondItem="mbA-kl-66f" secondAttribute="leading" constant="55" id="6tF-Hk-znL"/>
+                            <constraint firstItem="wqo-qv-qG2" firstAttribute="leading" secondItem="mbA-kl-66f" secondAttribute="leading" id="88G-rG-hTg"/>
                             <constraint firstItem="OZe-Ly-7hc" firstAttribute="centerX" secondItem="vZ6-q2-iec" secondAttribute="centerX" id="93V-7O-WXr"/>
                             <constraint firstItem="oNu-jv-dGg" firstAttribute="centerX" secondItem="vZ6-q2-iec" secondAttribute="centerX" id="FwR-Wk-5xr"/>
                             <constraint firstItem="snV-hv-QBN" firstAttribute="top" secondItem="oNu-jv-dGg" secondAttribute="bottom" constant="45" id="J9N-Rw-gKS"/>
@@ -151,8 +166,10 @@
                             <constraint firstItem="i0n-ib-WCt" firstAttribute="centerX" secondItem="vZ6-q2-iec" secondAttribute="centerX" id="ObW-KB-H27"/>
                             <constraint firstItem="i0n-ib-WCt" firstAttribute="top" secondItem="snV-hv-QBN" secondAttribute="bottom" constant="50" id="Tli-9a-bu2"/>
                             <constraint firstItem="OZe-Ly-7hc" firstAttribute="leading" secondItem="mbA-kl-66f" secondAttribute="leading" constant="55" id="a7P-QP-RRA"/>
+                            <constraint firstItem="wqo-qv-qG2" firstAttribute="trailing" secondItem="mbA-kl-66f" secondAttribute="trailing" id="bMv-4G-iGj"/>
                             <constraint firstItem="snV-hv-QBN" firstAttribute="centerX" secondItem="vZ6-q2-iec" secondAttribute="centerX" id="bxq-g5-D8o"/>
                             <constraint firstItem="mbA-kl-66f" firstAttribute="trailing" secondItem="oNu-jv-dGg" secondAttribute="trailing" constant="55" id="gVN-CX-z3c"/>
+                            <constraint firstItem="wqo-qv-qG2" firstAttribute="top" secondItem="mbA-kl-66f" secondAttribute="top" id="hkD-mN-0or"/>
                             <constraint firstItem="snV-hv-QBN" firstAttribute="top" secondItem="oNu-jv-dGg" secondAttribute="bottom" constant="45" id="lYh-OR-gVA"/>
                             <constraint firstItem="oNu-jv-dGg" firstAttribute="top" secondItem="OZe-Ly-7hc" secondAttribute="bottom" constant="45" id="upG-qG-EI8"/>
                             <constraint firstItem="mbA-kl-66f" firstAttribute="trailing" secondItem="OZe-Ly-7hc" secondAttribute="trailing" constant="55" id="y2C-3e-GIP"/>

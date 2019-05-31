@@ -38,20 +38,12 @@ class AuthenticatedUser {
     
     private init() {
         observers = []
-        signInTest()
-    }
-    
-    func signInTest() {
-        Auth.auth().signIn(withEmail: "test@test.com", password: "testtest", completion: {(r,e) in
-            if let result = r {
-                print("user: \(result.user.uid)")
-                self.user = result.user
-                self.informObserversSignedIn()
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.user = user
             }
-            if let error = e {
-                print("error: \(error.localizedDescription)")
-            }
-        })
+        }
     }
     
     private func informObserversSignedIn() {        
