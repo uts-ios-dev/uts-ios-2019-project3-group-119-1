@@ -72,6 +72,7 @@ PODS:
   - nanopb/encode (0.3.901)
   - PwGen (1.0.2)
   - RNCryptor (5.1.0)
+  - SCLAlertView (0.8)
   - SwiftyHash (1.0)
 
 DEPENDENCIES:
@@ -81,6 +82,7 @@ DEPENDENCIES:
   - Firebase/Database
   - PwGen
   - RNCryptor
+  - SCLAlertView
   - SwiftyHash
 
 SPEC REPOS:
@@ -99,6 +101,7 @@ SPEC REPOS:
     - nanopb
     - PwGen
     - RNCryptor
+    - SCLAlertView
     - SwiftyHash
 
 SPEC CHECKSUMS:
@@ -116,8 +119,9 @@ SPEC CHECKSUMS:
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   PwGen: c84dba4d6961cfbce08e9cd64013be9f4d3812ca
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
+  SCLAlertView: 6a77bb2edfc65e04dbe57725546cb4107a506b85
   SwiftyHash: 15368a2af6068bcd037ae0a33f7547af85c8d7b4
 
-PODFILE CHECKSUM: 9a59dbf78f8ee94a22e0ca34d838bec982e0f7fa
+PODFILE CHECKSUM: bff2ad4dbd46505c399271962f2a96ee2fe263a3
 
 COCOAPODS: 1.6.2

@@ -17,4 +17,7 @@ target 'password-manager' do
   pod 'PwGen'
   pod 'RNCryptor'
   pod 'SwiftyHash'
+  
+  # Pods for SCLAlertView
+  pod 'SCLAlertView'
 end

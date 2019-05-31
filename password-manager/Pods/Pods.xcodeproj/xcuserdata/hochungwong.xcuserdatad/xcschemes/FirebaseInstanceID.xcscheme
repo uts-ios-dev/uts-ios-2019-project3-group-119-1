@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "0930"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "36CE06FA7D40D1B560D7F45C8043292E"
-               BuildableName = "RNCryptor.framework"
-               BlueprintName = "RNCryptor"
+               BlueprintIdentifier = "1FFD9D76B4F827E726F7B1A918396D1A"
+               BuildableName = "FirebaseInstanceID.framework"
+               BlueprintName = "FirebaseInstanceID"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
