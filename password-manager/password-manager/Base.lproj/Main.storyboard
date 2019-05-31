@@ -49,7 +49,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZXg-uq-Xfx">
                                 <rect key="frame" x="167" y="531" width="80" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="e1M-fi-k7L"/>
+                                    <constraint firstAttribute="width" constant="80" id="O6D-bU-jT9"/>
                                 </constraints>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
@@ -74,21 +74,19 @@
                         <constraints>
                             <constraint firstItem="ZRB-US-GID" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="3Td-jC-EQA"/>
                             <constraint firstItem="TTr-mj-xGm" firstAttribute="top" secondItem="Qiq-78-hA8" secondAttribute="bottom" constant="92" id="4mH-vp-Bo7"/>
-                            <constraint firstItem="ZXg-uq-Xfx" firstAttribute="top" secondItem="7ey-lo-uFY" secondAttribute="bottom" constant="38" id="7AE-N6-cLX"/>
                             <constraint firstItem="Qiq-78-hA8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9MD-vO-nZX"/>
                             <constraint firstItem="ZRB-US-GID" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="106" id="IiZ-o3-mxA"/>
+                            <constraint firstItem="K03-LA-g0v" firstAttribute="top" secondItem="ZXg-uq-Xfx" secondAttribute="bottom" constant="15" id="LZO-Gq-3zr"/>
                             <constraint firstItem="7ey-lo-uFY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="MBN-yE-wwV"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ZXg-uq-Xfx" secondAttribute="trailing" constant="167" id="Rbe-25-dAh"/>
-                            <constraint firstItem="ZXg-uq-Xfx" firstAttribute="top" secondItem="7ey-lo-uFY" secondAttribute="bottom" constant="38" id="SO0-Ea-0QZ"/>
                             <constraint firstItem="TTr-mj-xGm" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="Tvw-vu-rZU"/>
+                            <constraint firstItem="ZXg-uq-Xfx" firstAttribute="top" secondItem="7ey-lo-uFY" secondAttribute="bottom" constant="38" id="UUW-4v-Ari"/>
                             <constraint firstItem="Qiq-78-hA8" firstAttribute="top" secondItem="ZRB-US-GID" secondAttribute="bottom" constant="33" id="VH0-OV-IX9"/>
                             <constraint firstItem="K03-LA-g0v" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="VSx-CQ-arV"/>
-                            <constraint firstItem="K03-LA-g0v" firstAttribute="top" secondItem="ZXg-uq-Xfx" secondAttribute="bottom" constant="15" id="Y6y-1M-nte"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="7ey-lo-uFY" secondAttribute="trailing" constant="55" id="bd2-oa-Jee"/>
-                            <constraint firstItem="ZXg-uq-Xfx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="167" id="dND-yO-O7R"/>
                             <constraint firstItem="7ey-lo-uFY" firstAttribute="top" secondItem="TTr-mj-xGm" secondAttribute="bottom" constant="46" id="kZV-HV-sIJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TTr-mj-xGm" secondAttribute="trailing" constant="55" id="lgX-CJ-B6B"/>
                             <constraint firstItem="7ey-lo-uFY" firstAttribute="top" secondItem="TTr-mj-xGm" secondAttribute="bottom" constant="46" id="nqk-SM-H6i"/>
+                            <constraint firstItem="ZXg-uq-Xfx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="sDt-kN-psS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -700,6 +698,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="o0I-I7-Dfy"/>
-        <segue reference="gu4-oL-n3D"/>
+        <segue reference="MYp-WO-0se"/>
     </inferredMetricsTieBreakers>
 </document>
