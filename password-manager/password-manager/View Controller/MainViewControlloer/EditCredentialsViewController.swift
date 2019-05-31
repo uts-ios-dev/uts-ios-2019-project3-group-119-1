@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import SwiftOverlays
+import SCLAlertView
 
 class EditCredentialsViewController: UITableViewController, CredentialCallback {
     private var credential: Credential!
@@ -81,6 +83,7 @@ class EditCredentialsViewController: UITableViewController, CredentialCallback {
     }
     
     @IBAction private func onSaveButtonPressed() {
+        SwiftOverlays.showBlockingWaitOverlayWithText("Saving")
         if isNewCredential {
             credential.save(callback: self)
         }
@@ -95,12 +98,14 @@ class EditCredentialsViewController: UITableViewController, CredentialCallback {
     }
     
     func onSaveError() {
-        // TODO: popup:
+        SwiftOverlays.removeAllBlockingOverlays()
+        SCLAlertView().showError("Save error", subTitle: "Could not save to Firebase")
         popBack()
     }
     
     func onSaveSuccessful() {
-        // TODO: popup
+        SwiftOverlays.removeAllBlockingOverlays()
+        SCLAlertView().showSuccess("Saved", subTitle: "Credential saved successfully")
         popBack()
     }
     

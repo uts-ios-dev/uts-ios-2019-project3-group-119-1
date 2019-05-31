@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SCLAlertView
 
 class ListViewController: UITableViewController, AuthenticatedUserObserver {    
     var user: AuthenticatedUser!
@@ -73,15 +74,15 @@ class ListViewController: UITableViewController, AuthenticatedUserObserver {
                         try credential.decrypt()
                         self.credentials.append(credential)
                     }
-                    // TODO: Pop up error
                     catch CryptoError.invalidPassword {
-                        print("Invalid password")
+                        SCLAlertView().showError("Decryption error", subTitle: "Invalid password")
+                        
                     }
                     catch CredentialError.incompleteCredential {
-                        print("Incomplete credential")
+                        SCLAlertView().showError("Decryption error", subTitle: "Incomplete credential")
                     }
                     catch {
-                        print("Unknown error")
+                        SCLAlertView().showError("Unknown error", subTitle: "This error is not supposed to happen")
                     }
                     
                     // The credential decryption worked,
