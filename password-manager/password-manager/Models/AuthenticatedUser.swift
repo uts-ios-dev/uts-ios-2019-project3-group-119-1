@@ -26,9 +26,24 @@ class AuthenticatedUser {
     }
     // End singleton parts
     
-    var observers: [AuthenticatedUserObserver]
+    // Observers
+    private var observers: [String: AuthenticatedUserObserver] = [:]
+    public func addObserver(observer: AuthenticatedUserObserver) -> String {
+        let id = NSUUID().uuidString;
+        observers[id] = observer
+        return id
+    }
+    public func removeObserver(id: String) {
+        observers[id] = nil
+    }
+    // End observers
+    
+    
     
     var user: User!
+    public var hasSignedIn: Bool {
+        get { return user != nil }
+    }
     var uidHash: String {
         get { return user.uid.digest.sha256 }
     }
@@ -37,26 +52,19 @@ class AuthenticatedUser {
     }
     
     private init() {
-        observers = []
-        signInTest()
-    }
-    
-    func signInTest() {
-        Auth.auth().signIn(withEmail: "test@test.com", password: "testtest", completion: {(r,e) in
-            if let result = r {
-                print("user: \(result.user.uid)")
-                self.user = result.user
+        observers = [:]
+        
+        Auth.auth().addStateDidChangeListener { (auth, user) in
+            if user != nil {
+                self.user = user
                 self.informObserversSignedIn()
             }
-            if let error = e {
-                print("error: \(error.localizedDescription)")
-            }
-        })
+        }
     }
     
     private func informObserversSignedIn() {        
         for observer in observers {
-            observer.onSignedIn()
+            observer.value.onSignedIn()
         }
     }
 }

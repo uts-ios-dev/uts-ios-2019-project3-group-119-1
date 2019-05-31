@@ -45,7 +45,7 @@ class Credential {
     }
     
     // If saving to an existing cred, supply a cred id
-    func save(withCredId credId: String? = nil) {
+    func save(withCredId credId: String? = nil, callback: CredentialCallback) {
         guard validate() else {
             return
         }
@@ -78,11 +78,11 @@ class Credential {
                      "website": encryptedWebsite,
                      "password": encryptedPassword])
           {(error, dbRef) in
-            if let error = error {
-                print("Error: \(error.localizedDescription)")
+            if let _ = error {
+                callback.onSaveError()
             }
             else {
-                print("Successfully saved to Firebase.")
+                callback.onSaveSuccessful()
             }
           }
         
@@ -104,4 +104,9 @@ class Credential {
         password = try pw.decrypt(withPassword: uid)
         website = try url.decrypt(withPassword: uid)
     }
+}
+
+protocol CredentialCallback: class {
+    func onSaveSuccessful()
+    func onSaveError()
 }

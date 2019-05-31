@@ -24,6 +24,7 @@
 		9000D51E228E642C00703D17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51D228E642C00703D17 /* Assets.xcassets */; };
 		9000D521228E642C00703D17 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9000D51F228E642C00703D17 /* LaunchScreen.storyboard */; };
 		9000D538228E8FF900703D17 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9000D537228E8FF900703D17 /* MainTabBarController.swift */; };
+		90083F3422A0AA760069B9A2 /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90083F3322A0AA760069B9A2 /* Spinner.swift */; };
 		903F908A229FBF070010AD8E /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 903F9089229FBF070010AD8E /* Authentication.swift */; };
 		90F7B8C0229CFB7600F6F3A3 /* AccountSettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7B8BF229CFB7600F6F3A3 /* AccountSettingsTableViewController.swift */; };
 		90F7B8C7229E6C2C00F6F3A3 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F7B8C6229E6C2C00F6F3A3 /* RegisterViewController.swift */; };
@@ -52,6 +53,7 @@
 		9000D520228E642C00703D17 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9000D522228E642C00703D17 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9000D537228E8FF900703D17 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		90083F3322A0AA760069B9A2 /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
 		903F9089229FBF070010AD8E /* Authentication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		90F7B8BF229CFB7600F6F3A3 /* AccountSettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsTableViewController.swift; sourceTree = "<group>"; };
 		90F7B8C6229E6C2C00F6F3A3 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
@@ -160,6 +162,7 @@
 				1F9E79B3229FCF5300B3E3A9 /* Errors */,
 				1FA9D401229289260051206C /* Extensions */,
 				1FA9D3FC22927B890051206C /* Models */,
+				90083F3222A0AA530069B9A2 /* Utility */,
 				1F1A6C08228E75FE006A0C36 /* View Controller */,
 				9000D513228E642B00703D17 /* AppDelegate.swift */,
 				9000D517228E642B00703D17 /* Main.storyboard */,
@@ -171,6 +174,14 @@
 				1FA9D3FA229261FF0051206C /* Podfile */,
 			);
 			path = "password-manager";
+			sourceTree = "<group>";
+		};
+		90083F3222A0AA530069B9A2 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				90083F3322A0AA760069B9A2 /* Spinner.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		B8F249924790D4888431E80B /* Frameworks */ = {
@@ -288,7 +299,6 @@
 				"${BUILT_PRODUCTS_DIR}/PwGen/PwGen.framework",
 				"${BUILT_PRODUCTS_DIR}/RNCryptor/RNCryptor.framework",
 				"${BUILT_PRODUCTS_DIR}/SCLAlertView/SCLAlertView.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftOverlays/SwiftOverlays.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyHash/SwiftyHash.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -302,7 +312,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PwGen.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RNCryptor.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCLAlertView.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftOverlays.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -333,6 +342,7 @@
 				90F7B8C0229CFB7600F6F3A3 /* AccountSettingsTableViewController.swift in Sources */,
 				1F1A6C12228E75FE006A0C36 /* ListViewController.swift in Sources */,
 				903F908A229FBF070010AD8E /* Authentication.swift in Sources */,
+				90083F3422A0AA760069B9A2 /* Spinner.swift in Sources */,
 				1FA9D3FE22927BA50051206C /* AuthenticatedUser.swift in Sources */,
 				9000D51C228E642B00703D17 /* password_manager.xcdatamodeld in Sources */,
 				9000D514228E642B00703D17 /* AppDelegate.swift in Sources */,

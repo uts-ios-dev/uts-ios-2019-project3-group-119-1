@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EditCredentialsViewController: UITableViewController {
+class EditCredentialsViewController: UITableViewController, CredentialCallback {
     private var credential: Credential!
     public var isNewCredential: Bool = true
     private var credId: String?
@@ -18,19 +18,31 @@ class EditCredentialsViewController: UITableViewController {
     @IBOutlet private weak var websiteField: UITextField!
     @IBOutlet private weak var saveButton: UIBarButtonItem!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        // Set up interface for new credential
         if isNewCredential {
+            usernameField.text = ""
+            passwordField.text = ""
+            websiteField.text = ""
+            
             credential = Credential()
             regeneratePassword()
             validateCredentials()
+            
+            self.title = "New Password"
+            
+        // Set up interface for editing
+        // The information is set in editFor() before the
+        // view controller appears
         } else {
             usernameField.text = credential.username
             passwordField.text = credential.password
             websiteField.text = credential.website
+            
+            self.title = "Edit Password"
         }
-        
     }
     
     public func editFor(_ cred: Credential, credId: String) {
@@ -70,10 +82,35 @@ class EditCredentialsViewController: UITableViewController {
     
     @IBAction private func onSaveButtonPressed() {
         if isNewCredential {
-            credential.save()
+            credential.save(callback: self)
         }
+        // Editing an existing password
         else {
-            credential.save(withCredId: credId)
+            credential.save(withCredId: credId, callback: self)
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func onSaveError() {
+        // TODO: popup:
+        popBack()
+    }
+    
+    func onSaveSuccessful() {
+        // TODO: popup
+        popBack()
+    }
+    
+    private func popBack() {
+        if isNewCredential {
+            // Is not editing, so switch tab
+            self.tabBarController?.selectedIndex = 0
+        } else {
+            // Is editing, so will pop back
+            self.navigationController?.popViewController(animated: true)
         }
     }
 }

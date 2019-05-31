@@ -24,7 +24,7 @@ class SettingsViewController: UIViewController {
             self.userDefaults.synchronize()
             
             if let storyboard = self.storyboard {
-                let initialViewController = storyboard.instantiateViewController(withIdentifier: "initialViewController") as! UINavigationController
+                let initialViewController = storyboard.instantiateViewController(withIdentifier: "initialViewController") as UIViewController
                 self.present(initialViewController, animated: true, completion: nil)
             }
         } catch let error as NSError {
