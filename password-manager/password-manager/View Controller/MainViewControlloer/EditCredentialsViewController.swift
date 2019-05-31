@@ -25,10 +25,12 @@ class EditCredentialsViewController: UITableViewController {
             credential = Credential()
             regeneratePassword()
             validateCredentials()
+            self.title = "New Password"
         } else {
             usernameField.text = credential.username
             passwordField.text = credential.password
             websiteField.text = credential.website
+            self.title = "Edit Password"
         }
         
     }
